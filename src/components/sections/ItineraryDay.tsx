@@ -44,14 +44,16 @@ export default function ItineraryDay({
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Side - Images */}
             <div className="space-y-6">
-              {/* Featured Image */}
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+              {/* Featured Image - Hero, clear and prominent */}
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
                 <CldImage
                   src={featuredImage}
                   alt={dayTitle}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  quality="auto"
+                  format="auto"
                 />
               </div>
 
@@ -72,7 +74,7 @@ export default function ItineraryDay({
                       }}
                     >
                       <div className="relative w-full h-full rounded-xl overflow-hidden transition-all duration-300 group-hover:scale-[1.5] origin-center opacity-75 group-hover:opacity-100 shadow-md group-hover:shadow-2xl">
-                        {/* Thumbnail - low res for grid */}
+                        {/* Thumbnail - muted/desaturated for visual hierarchy */}
                         <CldImage
                           src={imageId}
                           alt={`${dayTitle} - Gallery ${index + 1}`}
@@ -80,8 +82,16 @@ export default function ItineraryDay({
                           className="object-cover group-hover:hidden"
                           sizes="(max-width: 768px) 25vw, 12.5vw"
                           loading="lazy"
+                          effects={[
+                            {
+                              saturation: -20,
+                            },
+                            {
+                              contrast: -5,
+                            },
+                          ]}
                         />
-                        {/* High-res version on hover */}
+                        {/* High-res version on hover - full color restored */}
                         <CldImage
                           src={imageId}
                           alt={`${dayTitle} - Gallery ${index + 1} - High res`}
