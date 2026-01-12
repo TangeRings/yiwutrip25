@@ -111,11 +111,23 @@ This project uses **Cloudinary SDK** for optimized image delivery. No local asse
 
 2. **Create `.env.local` file** in the root directory:
    ```env
+   # Required for client-side CldImage component
    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
    NEXT_PUBLIC_CLOUDINARY_API_KEY=your_api_key
+   
+   # Required for server-side operations (upload, delete, admin API)
+   # ⚠️ NEVER add NEXT_PUBLIC_ prefix to API_SECRET (security risk!)
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+   CLOUDINARY_API_ENVIRONMENT_VARIABLE=your_api_env_var
    ```
    
-   **Note:** For `CldImage` client-side usage, you only need `cloud_name` and `api_key` with `NEXT_PUBLIC_` prefix. The API secret is only needed for server-side operations (uploading, etc.).
+   **Important Security Notes:**
+   - `CLOUD_NAME` & `API_KEY`: Safe to expose to client (use `NEXT_PUBLIC_` prefix)
+   - `API_SECRET` & `API_ENVIRONMENT_VARIABLE`: **Server-side only** - never expose to browser!
+   - For `CldImage` component (displaying images): Only need the `NEXT_PUBLIC_` versions
+   - For uploads/admin operations (API routes, Server Components): Use all credentials without `NEXT_PUBLIC_`
 
 3. **Upload your images to Cloudinary:**
    - Use the Media Library in your Cloudinary dashboard

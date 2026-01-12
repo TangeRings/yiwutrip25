@@ -21,12 +21,14 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
-              <span className="text-2xl font-display font-bold text-accent-navy">
-                Yiwu Trip
-              </span>
-              <span className="absolute -top-1 -right-3 text-accent-orange text-xs">
-                ★
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-display font-bold text-accent-navy">
+                  Yiwu Business Study Trip
+                </span>
+                <span className="text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.015em] text-accent-navy/70 font-normal mt-0.5">
+                  by <span className="font-semibold text-accent-orange">CEL</span> × <span className="font-semibold text-accent-orange">IMB NYU Shanghai</span>, 09/2025
+                </span>
+              </div>
             </div>
           </Link>
 
@@ -36,7 +38,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-accent-navy/70 hover:text-accent-orange transition-colors duration-200"
+                className="text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium text-accent-navy/70 hover:text-accent-orange transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -45,7 +47,7 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2.5 bg-accent-orange text-white text-sm font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105">
+            <button className="px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105">
               Get Started
             </button>
           </div>
@@ -81,13 +83,13 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-base font-medium text-accent-navy/70 hover:text-accent-orange transition-colors"
+                className="block text-[16px] lg:text-[17px] leading-[1.5] tracking-[0.01em] font-medium text-accent-navy/70 hover:text-accent-orange transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <button className="w-full mt-4 px-6 py-2.5 bg-accent-orange text-white text-sm font-medium rounded-full hover:bg-accent-orange/90 transition-all">
+            <button className="w-full mt-4 px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all">
               Get Started
             </button>
           </div>

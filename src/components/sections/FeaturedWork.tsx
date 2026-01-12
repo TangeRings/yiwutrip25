@@ -38,7 +38,14 @@ export default function FeaturedWork() {
               Featured Work
             </h2>
           </div>
-          <p className="text-lg text-accent-navy/60 max-w-2xl">
+          <p className="
+            text-[17px]
+            lg:text-[19px]
+            leading-[1.75]
+            tracking-[0.015em]
+            text-accent-navy/60
+            max-w-2xl
+          ">
             A curated selection of our most captivating projects, showcasing diverse styles
             and creative excellence.
           </p>
@@ -60,10 +67,6 @@ export default function FeaturedWork() {
                   height={800}
                   alt={work.title}
                   className="w-full h-full object-cover"
-                  crop={{
-                    type: "auto",
-                    source: true,
-                  }}
                   loading={index === 0 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
@@ -73,7 +76,7 @@ export default function FeaturedWork() {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-accent-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-medium">View Project →</span>
+                  <span className="text-[15px] lg:text-[16px] leading-[1.5] tracking-[0.01em] text-white font-medium">View Project →</span>
                 </div>
               </div>
 
@@ -82,7 +85,13 @@ export default function FeaturedWork() {
                 <h3 className="font-display font-semibold text-xl text-accent-navy group-hover:text-accent-orange transition-colors">
                   {work.title}
                 </h3>
-                <p className="text-sm text-accent-navy/60">{work.category}</p>
+                <p className="
+                  text-[14px]
+                  lg:text-[15px]
+                  leading-[1.6]
+                  tracking-[0.01em]
+                  text-accent-navy/60
+                ">{work.category}</p>
               </div>
             </div>
           ))}
@@ -90,7 +99,7 @@ export default function FeaturedWork() {
 
         {/* View All Button */}
         <div className="mt-16 lg:mt-24 text-center">
-          <button className="px-10 py-4 border-2 border-accent-navy/20 text-accent-navy font-medium rounded-full hover:bg-accent-navy hover:text-white transition-all duration-300 hover:scale-105">
+          <button className="px-10 py-4 border-2 border-accent-navy/20 text-[16px] lg:text-[17px] leading-[1.5] tracking-[0.01em] text-accent-navy font-medium rounded-full hover:bg-accent-navy hover:text-white transition-all duration-300 hover:scale-105">
             View All Projects
           </button>
         </div>
