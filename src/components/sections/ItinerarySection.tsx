@@ -2,7 +2,7 @@ import ItineraryDay from "./ItineraryDay";
 
 const itineraryData = [
   {
-    dayTitle: "Day 1 — Market Exploration",
+    dayTitle: "Market Exploration",
     description:
       "Students begin their immersive journey into Yiwu's Small Merchandise Market, observing the scale and diversity of small-scale commerce. Through guided exploration, participants learn to identify market opportunities, understand supplier relationships, and witness real-time negotiation dynamics that define low-budget entrepreneurship.",
     featuredImage: "IMG_2745_ffysjx",
