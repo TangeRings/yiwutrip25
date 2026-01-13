@@ -19,18 +19,23 @@ export default function ItineraryDay({
   showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  
+  // All images including featured image (featured is first, then gallery images)
+  const allImages = [featuredImage, ...galleryImages];
 
-  // Navigate to previous image
+  // Navigate to previous image (with loop)
   const goToPrevious = () => {
-    if (selectedImageIndex !== null && selectedImageIndex > 0) {
-      setSelectedImageIndex(selectedImageIndex - 1);
+    if (selectedImageIndex !== null) {
+      // Loop: if at first image (0), go to last image
+      setSelectedImageIndex(selectedImageIndex === 0 ? allImages.length - 1 : selectedImageIndex - 1);
     }
   };
 
-  // Navigate to next image
+  // Navigate to next image (with loop)
   const goToNext = () => {
-    if (selectedImageIndex !== null && selectedImageIndex < galleryImages.length - 1) {
-      setSelectedImageIndex(selectedImageIndex + 1);
+    if (selectedImageIndex !== null) {
+      // Loop: if at last image, go to first image (0)
+      setSelectedImageIndex(selectedImageIndex === allImages.length - 1 ? 0 : selectedImageIndex + 1);
     }
   };
 
@@ -57,7 +62,7 @@ export default function ItineraryDay({
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [selectedImageIndex, galleryImages.length]);
+  }, [selectedImageIndex, allImages.length]);
 
   return (
     <>
@@ -83,16 +88,30 @@ export default function ItineraryDay({
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Side - Images */}
           <div className="space-y-6">
-            {/* Featured Image - Hero, clear and prominent */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
+            {/* Featured Image - now clickable */}
+            <button
+              onClick={() => setSelectedImageIndex(0)}
+              className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.zIndex = '20';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.zIndex = '10';
+              }}
+            >
+              <div className="absolute inset-0 transition-all duration-300 group-hover:scale-[1.02]">
                 <CldImage
                   src={featuredImage}
-                  alt={dayTitle}
+                  alt={`${dayTitle} - Featured`}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
               </div>
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-accent-navy/0 group-hover:bg-accent-navy/5 transition-colors duration-300" />
+            </button>
 
               {/* Gallery Row */}
               {galleryImages.length > 0 && (
@@ -100,7 +119,7 @@ export default function ItineraryDay({
                   {galleryImages.map((imageId, index) => (
                     <button
                       key={index}
-                      onClick={() => setSelectedImageIndex(index)}
+                      onClick={() => setSelectedImageIndex(index + 1)}
                       className="relative w-full aspect-square rounded-xl overflow-visible group cursor-pointer"
                       style={{ zIndex: 1 }}
                       onMouseEnter={(e) => {
@@ -177,7 +196,7 @@ export default function ItineraryDay({
       {/* Popup Modal - High-res lightbox with navigation */}
       {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center p-8"
         >
           {/* Backdrop - click to close (positioned FIRST so it's behind) */}
           <div
@@ -185,27 +204,46 @@ export default function ItineraryDay({
             onClick={() => setSelectedImageIndex(null)}
           />
           
-          {/* Image container (positioned ABOVE backdrop) */}
+          {/* Image container with content below (positioned ABOVE backdrop) */}
           <div
-            className="relative max-w-5xl w-full z-10"
+            className="relative z-10 flex flex-col items-center max-w-[90vw] max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full">
-              <CldImage
-                src={galleryImages[selectedImageIndex]}
-                alt={`${dayTitle} - Gallery ${selectedImageIndex + 1}`}
-                width={2000}
-                height={3000}
-                className="object-contain w-full h-auto max-h-[90vh] rounded-lg shadow-2xl bg-white"
-                quality={95}
-                priority
-              />
+            {/* White container with image + counter + caption */}
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+              {/* Image */}
+              <div className="relative flex items-center justify-center px-8 pt-8 pb-4">
+                <CldImage
+                  src={allImages[selectedImageIndex]}
+                  alt={`${dayTitle} - Image ${selectedImageIndex + 1}`}
+                  width={1800}
+                  height={1800}
+                  className="w-auto h-auto max-w-[75vw] max-h-[70vh]"
+                  quality={95}
+                  priority
+                />
+              </div>
+              
+              {/* Counter and Caption section */}
+              <div className="px-8 pb-6 space-y-3">
+                {/* Image counter */}
+                <div className="text-center">
+                  <span className="inline-block px-4 py-1.5 bg-accent-navy/5 rounded-full text-accent-navy text-sm font-medium">
+                    {selectedImageIndex + 1} / {allImages.length}
+                  </span>
+                </div>
+                
+                {/* Caption */}
+                <p className="text-center text-accent-navy/70 text-[15px] lg:text-[16px] font-light leading-relaxed">
+                  Caption placeholder - Day visit to market
+                </p>
+              </div>
             </div>
             
-            {/* Close button */}
+            {/* Close button - outside white container */}
             <button
               onClick={() => setSelectedImageIndex(null)}
-              className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-accent-navy transition-colors duration-200 shadow-lg z-10"
+              className="absolute -top-4 -right-4 w-12 h-12 bg-white hover:bg-accent-orange rounded-full flex items-center justify-center text-accent-navy hover:text-white transition-all duration-200 shadow-lg z-20"
               aria-label="Close"
             >
               <svg
@@ -221,52 +259,43 @@ export default function ItineraryDay({
               </svg>
             </button>
 
-            {/* Previous button */}
-            {selectedImageIndex > 0 && (
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-accent-navy transition-all duration-200 shadow-lg hover:scale-110"
-                aria-label="Previous image"
+            {/* Previous button - always visible (loops) */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-[-60px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-accent-navy transition-all duration-200 shadow-lg hover:scale-110"
+              aria-label="Previous image"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-            )}
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
 
-            {/* Next button */}
-            {selectedImageIndex < galleryImages.length - 1 && (
-              <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-accent-navy transition-all duration-200 shadow-lg hover:scale-110"
-                aria-label="Next image"
+            {/* Next button - always visible (loops) */}
+            <button
+              onClick={goToNext}
+              className="absolute right-[-60px] top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-accent-navy transition-all duration-200 shadow-lg hover:scale-110"
+              aria-label="Next image"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            )}
-
-            {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-white/90 rounded-full text-accent-navy text-sm font-medium shadow-lg">
-              {selectedImageIndex + 1} / {galleryImages.length}
-            </div>
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       )}
