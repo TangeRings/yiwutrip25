@@ -7,11 +7,17 @@ import Footer from "@/components/layout/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen grain">
-      <Navigation />
-      <HeroSection />
+      <div className="min-h-screen" data-scroll-section>
+        <Navigation />
+        <HeroSection />
+      </div>
       <ItinerarySection />
-      <FeaturedWork />
-      <Footer />
+      <div className="min-h-screen" data-scroll-section>
+        <FeaturedWork />
+      </div>
+      <div className="min-h-screen" data-scroll-section>
+        <Footer />
+      </div>
     </main>
   );
 }

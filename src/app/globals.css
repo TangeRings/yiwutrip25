@@ -8,8 +8,49 @@
 }
 
 @layer base {
+  /* Lenis recommended CSS for compatibility */
+  html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  html {
+    scroll-snap-type: y proximity; /* Changed from mandatory to proximity for softer snap */
+    scroll-padding-top: 0; /* Removed - was causing offset when scrolling down */
+    overscroll-behavior-y: none;
+  }
+  
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Sections snap to start (top of viewport) */
+  [data-scroll-section] {
+    scroll-snap-align: start;
+    /* Removed scroll-snap-stop: always - was causing hard/instant snapping */
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-snap-type: none;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

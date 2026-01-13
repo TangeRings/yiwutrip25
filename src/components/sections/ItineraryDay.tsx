@@ -8,6 +8,7 @@ interface ItineraryDayProps {
   description: string;
   featuredImage: string;
   galleryImages: string[];
+  showTitle?: boolean;
 }
 
 export default function ItineraryDay({
@@ -15,6 +16,7 @@ export default function ItineraryDay({
   description,
   featuredImage,
   galleryImages,
+  showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -39,12 +41,29 @@ export default function ItineraryDay({
 
   return (
     <>
-      <div className="py-16 lg:py-24 border-b border-accent-navy/10 last:border-b-0">
-        <div className="container mx-auto px-6 lg:px-12">
+      <div className="min-h-screen flex items-start pt-0 pb-6 lg:pb-8 border-b border-accent-navy/10 last:border-b-0" data-scroll-section>
+        <div className="container mx-auto px-6 lg:px-12 w-full">
+          {/* Itinerary Title - Only show on first day, positioned above grid */}
+          {showTitle && (
+            <h2 className="
+              font-display
+              font-bold
+              text-[40px]
+              lg:text-[48px]
+              leading-[1.1]
+              tracking-tight
+              text-accent-navy
+              mb-8 lg:mb-10
+              pt-24 lg:pt-24
+            ">
+              Itinerary
+            </h2>
+          )}
+          
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Left Side - Images */}
-            <div className="space-y-6">
-              {/* Featured Image - Hero, clear and prominent */}
+          {/* Left Side - Images */}
+          <div className="space-y-6">
+            {/* Featured Image - Hero, clear and prominent */}
               <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
                 <CldImage
                   src={featuredImage}
@@ -109,7 +128,7 @@ export default function ItineraryDay({
             </div>
 
           {/* Right Side - Text */}
-          <div className="lg:pl-8">
+          <div className="lg:pl-8 flex flex-col">
             <h2 className="
               font-display
               font-bold

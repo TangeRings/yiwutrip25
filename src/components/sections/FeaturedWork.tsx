@@ -28,7 +28,7 @@ const featuredWork = [
 
 export default function FeaturedWork() {
   return (
-    <section id="work" className="py-20 lg:py-32">
+    <section id="work" className="py-12 lg:py-16">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-16 lg:mb-24">

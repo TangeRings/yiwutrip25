@@ -23,6 +23,15 @@ const config: Config = {
         display: ["var(--font-space-grotesk)", "sans-serif"],
         body: ["var(--font-inter)", "sans-serif"],
       },
+      scrollSnapAlign: {
+        start: "start",
+        center: "center",
+        end: "end",
+      },
+      scrollSnapStop: {
+        always: "always",
+        normal: "normal",
+      },
     },
   },
   plugins: [],

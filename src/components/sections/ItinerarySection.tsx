@@ -18,48 +18,19 @@ const itineraryData = [
 
 export default function ItinerarySection() {
   return (
-    <section id="itinerary" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="mb-16 lg:mb-24 text-center">
-          <h2 className="
-            font-display
-            font-bold
-            text-[40px]
-            lg:text-[48px]
-            leading-[1.1]
-            tracking-tight
-            text-accent-navy
-            mb-6
-          ">
-            Itinerary
-          </h2>
-          <p className="
-            text-[17px]
-            lg:text-[19px]
-            leading-[1.75]
-            tracking-[0.015em]
-            text-accent-navy/70
-            font-light
-            max-w-2xl
-            mx-auto
-          ">
-            A structured three-day field experience designed to immerse students in real-world entrepreneurship through direct market engagement.
-          </p>
-        </div>
-
-        {/* Itinerary Days */}
-        <div>
-          {itineraryData.map((day, index) => (
-            <ItineraryDay
-              key={index}
-              dayTitle={day.dayTitle}
-              description={day.description}
-              featuredImage={day.featuredImage}
-              galleryImages={day.galleryImages}
-            />
-          ))}
-        </div>
+    <section id="itinerary" className="bg-background">
+      {/* Itinerary Days */}
+      <div>
+        {itineraryData.map((day, index) => (
+          <ItineraryDay
+            key={index}
+            dayTitle={day.dayTitle}
+            description={day.description}
+            featuredImage={day.featuredImage}
+            galleryImages={day.galleryImages}
+            showTitle={index === 0}
+          />
+        ))}
       </div>
     </section>
   );

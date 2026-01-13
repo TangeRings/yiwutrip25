@@ -4,7 +4,7 @@ import { CldImage } from "next-cloudinary";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="pt-24 pb-20 lg:pt-32 lg:pb-32">
+    <section id="home" className="pt-24 pb-12 lg:pt-32 lg:pb-16">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Big Typography */}
