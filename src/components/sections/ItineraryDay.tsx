@@ -179,12 +179,13 @@ export default function ItineraryDay({
               {dayTitle}
             </h2>
             <p className="
-              text-[17px]
-              lg:text-[19px]
+              text-[16px]
+              lg:text-[17px]
               leading-[1.75]
               tracking-[0.015em]
               text-accent-navy/70
               font-light
+              whitespace-pre-line
             ">
               {description}
             </p>
