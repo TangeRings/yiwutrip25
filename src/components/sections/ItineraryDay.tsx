@@ -8,6 +8,7 @@ interface ItineraryDayProps {
   description: string;
   featuredImage: string;
   galleryImages: string[];
+  studentQuote?: string;
   showTitle?: boolean;
 }
 
@@ -16,6 +17,7 @@ export default function ItineraryDay({
   description,
   featuredImage,
   galleryImages,
+  studentQuote,
   showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -186,9 +188,38 @@ export default function ItineraryDay({
               text-accent-navy/70
               font-light
               whitespace-pre-line
+              mb-4
             ">
               {description}
             </p>
+            
+            {/* Student Quote */}
+            {studentQuote && (
+              <div className="relative pl-6 border-l-2 border-accent-orange/30 mt-2">
+                <div className="absolute -left-1 top-0 w-2 h-2 bg-accent-orange rounded-full"></div>
+                <p className="
+                  text-[15px]
+                  lg:text-[16px]
+                  leading-[1.7]
+                  tracking-[0.01em]
+                  text-accent-navy/80
+                  font-light
+                  italic
+                ">
+                  "{studentQuote}"
+                </p>
+                <p className="
+                  text-[13px]
+                  lg:text-[14px]
+                  mt-3
+                  text-accent-navy/60
+                  font-light
+                  not-italic
+                ">
+                  — Student
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
