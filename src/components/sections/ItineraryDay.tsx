@@ -8,6 +8,7 @@ interface ItineraryDayProps {
   description: string;
   featuredImage: string;
   galleryImages: string[];
+  imageCaptions?: string[]; // Array of captions: [featuredCaption, gallery1, gallery2, ...]
   studentQuote?: string;
   showTitle?: boolean;
 }
@@ -17,10 +18,12 @@ export default function ItineraryDay({
   description,
   featuredImage,
   galleryImages,
+  imageCaptions,
   studentQuote,
   showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [imgWidth, setImgWidth] = useState<number | null>(null);
   
   // All images including featured image (featured is first, then gallery images)
   const allImages = [featuredImage, ...galleryImages];
@@ -58,6 +61,9 @@ export default function ItineraryDay({
     if (selectedImageIndex !== null) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+    } else {
+      // Clear image width when modal closes
+      setImgWidth(null);
     }
 
     return () => {
@@ -209,8 +215,8 @@ export default function ItineraryDay({
                   "{studentQuote}"
                 </p>
                 <p className="
-                  text-[13px]
-                  lg:text-[14px]
+                  text-[12px]
+                  lg:text-[13px]
                   mt-3
                   text-accent-navy/60
                   font-light
@@ -242,17 +248,21 @@ export default function ItineraryDay({
             onClick={(e) => e.stopPropagation()}
           >
             {/* White container with image + counter + caption */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+            <div className="bg-white rounded-2xl shadow-2xl flex flex-col">
               {/* Image */}
-              <div className="relative flex items-center justify-center px-8 pt-8 pb-4">
+              <div className="px-8 pt-8 pb-4 flex justify-center">
                 <CldImage
                   src={allImages[selectedImageIndex]}
                   alt={`${dayTitle} - Image ${selectedImageIndex + 1}`}
                   width={1800}
                   height={1800}
-                  className="w-auto h-auto max-w-[75vw] max-h-[70vh]"
+                  className="block w-auto h-auto max-h-[70vh] max-w-[75vw] rounded-lg"
                   quality={95}
                   priority
+                  onLoad={(e) => {
+                    const width = (e.currentTarget as HTMLImageElement).clientWidth;
+                    setImgWidth(width);
+                  }}
                 />
               </div>
               
@@ -265,9 +275,12 @@ export default function ItineraryDay({
                   </span>
                 </div>
                 
-                {/* Caption */}
-                <p className="text-center text-accent-navy/70 text-[15px] lg:text-[16px] font-light leading-relaxed">
-                  Caption placeholder - Day visit to market
+                {/* Caption - width locked to image width */}
+                <p 
+                  className="mx-auto text-center text-accent-navy/70 text-[13px] lg:text-[14px] font-light leading-relaxed whitespace-normal break-words"
+                  style={{ width: imgWidth ? `${imgWidth}px` : "auto" }}
+                >
+                  {imageCaptions && imageCaptions[selectedImageIndex] ? imageCaptions[selectedImageIndex] : "No caption available"}
                 </p>
               </div>
             </div>

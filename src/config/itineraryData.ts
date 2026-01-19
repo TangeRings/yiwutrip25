@@ -17,6 +17,7 @@ export interface ItineraryDay {
     cloudinaryId: string;
     caption: string;
   }>;
+  studentQuote?: string;
 }
 
 export const itineraryData: ItineraryDay[] = [
@@ -25,8 +26,8 @@ export const itineraryData: ItineraryDay[] = [
   // ============================================
   {
     dayNumber: 1,
-    dayTitle: "Market Exploration",
-    description: "Students begin their immersive journey into Yiwu's Small Merchandise Market, observing the scale and diversity of small-scale commerce. Through guided exploration, participants learn to identify market opportunities, understand supplier relationships, and witness real-time negotiation dynamics that define low-budget entrepreneurship.",
+    dayTitle: "Yiwu Small Merchandise Market",
+    description: "Students begin their immersion in Yiwu's Small Merchandise Market by stepping into the role of sellers rather than observers. During guided fieldwork, each student is required to approach suppliers as a potential buyer or distributor, initiating real conversations about pricing, minimum order quantities (MOQs), customization options, packaging, and delivery timelines.\n\nThis role-based interaction allows students to uncover operational details that are rarely visible in textbooks—how products are priced across different order scales, how negotiations unfold in practice, and how suppliers position themselves within dense competitive environments.\n\nSpanning over 6.4 million square meters, Yiwu's Small Merchandise Market comprises 75,000 stalls and attracts around 220,000 visitors daily.",
     
     // Featured Image (the big one)
     featuredImage: {
@@ -46,13 +47,15 @@ export const itineraryData: ItineraryDay[] = [
       },
       {
         cloudinaryId: "WX20260112-140556_2x_wmpstq",
-        caption: "Professor Nicole C. Wang introduces supply chain structures and negotiation strategies on site."
+        caption: "Prof. Nicole C. Wang introduces supply chain structures and negotiation strategies on site."
       },
       {
         cloudinaryId: "WX20260112-141018_2x_frlitm",
         caption: "Santing Road Night Market offers a contrasting view of small-scale retail practices."
       }
-    ]
+    ],
+    
+    studentQuote: "This experience completely changed my understanding of global supply chains. Talking directly with suppliers gave me insights I never could have learned from a textbook."
   },
 
   // ============================================
