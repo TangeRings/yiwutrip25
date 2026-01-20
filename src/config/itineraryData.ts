@@ -67,25 +67,25 @@ export const itineraryData: ItineraryDay[] = [
     description: "Dive deeper into supplier relationships. Students engage directly with merchants, learning negotiation tactics, MOQ requirements, and quality assessment. Site visits to manufacturing facilities provide insight into production processes and cost structures.",
 
     featuredImage: {
-      cloudinaryId: "IMG_2745_ffysjx", // reusing Day 1 image for layout
+      cloudinaryId: "IMG_20250927_113548_nr7tx6",
       caption: "Day 2 - Caption for featured image"
     },
 
     galleryImages: [
       {
-        cloudinaryId: "WX20260112-141214_2x_vc1rk3",
+        cloudinaryId: "IMG_2865_phpyjx",
         caption: "Day 2 - Gallery image 1 caption"
       },
       {
-        cloudinaryId: "WX20260112-141109_2x_nnhz9l",
+        cloudinaryId: "IMG_2902_qiy6h7",
         caption: "Day 2 - Gallery image 2 caption"
       },
       {
-        cloudinaryId: "WX20260112-140556_2x_wmpstq",
+        cloudinaryId: "IMG_2803_cit9uz",
         caption: "Day 2 - Gallery image 3 caption"
       },
       {
-        cloudinaryId: "WX20260112-141018_2x_frlitm",
+        cloudinaryId: "IMG_2824_nmpjtn",
         caption: "Day 2 - Gallery image 4 caption"
       }
     ]
