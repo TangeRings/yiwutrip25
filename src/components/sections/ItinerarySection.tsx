@@ -4,6 +4,7 @@ import { itineraryData } from "@/config/itineraryData";
 export default function ItinerarySection() {
   // Transform data from config into component props format
   const days = itineraryData.map(day => ({
+    dayNumber: day.dayNumber,
     dayTitle: day.dayTitle,
     description: day.description,
     featuredImage: day.featuredImage.cloudinaryId,
@@ -22,13 +23,14 @@ export default function ItinerarySection() {
         {days.map((day, index) => (
           <ItineraryDay
             key={index}
+            dayNumber={day.dayNumber}
             dayTitle={day.dayTitle}
             description={day.description}
             featuredImage={day.featuredImage}
             galleryImages={day.galleryImages}
             imageCaptions={day.imageCaptions}
             studentQuote={day.studentQuote}
-            showTitle={index === 0}
+            showTitle={true}
           />
         ))}
       </div>

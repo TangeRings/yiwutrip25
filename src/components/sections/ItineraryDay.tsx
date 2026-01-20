@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { CldImage } from "next-cloudinary";
 
 interface ItineraryDayProps {
+  dayNumber: number;
   dayTitle: string;
   description: string;
   featuredImage: string;
@@ -14,6 +15,7 @@ interface ItineraryDayProps {
 }
 
 export default function ItineraryDay({
+  dayNumber,
   dayTitle,
   description,
   featuredImage,
@@ -89,7 +91,7 @@ export default function ItineraryDay({
               mb-8 lg:mb-10
               pt-24 lg:pt-24
             ">
-              Itinerary - Day 1
+              Itinerary - Day {dayNumber}
             </h2>
           )}
           
