@@ -14,6 +14,7 @@ export default function ItinerarySection() {
       ...day.galleryImages.map(img => img.caption)
     ],
     studentQuote: day.studentQuote || "",
+    studentName: day.studentName || "Student",
   }));
 
   return (
@@ -30,6 +31,7 @@ export default function ItinerarySection() {
             galleryImages={day.galleryImages}
             imageCaptions={day.imageCaptions}
             studentQuote={day.studentQuote}
+            studentName={day.studentName}
             showTitle={true}
           />
         ))}

@@ -11,6 +11,7 @@ interface ItineraryDayProps {
   galleryImages: string[];
   imageCaptions?: string[]; // Array of captions: [featuredCaption, gallery1, gallery2, ...]
   studentQuote?: string;
+  studentName?: string;
   showTitle?: boolean;
 }
 
@@ -22,11 +23,12 @@ export default function ItineraryDay({
   galleryImages,
   imageCaptions,
   studentQuote,
+  studentName,
   showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [imgWidth, setImgWidth] = useState<number | null>(null);
-  
+
   // All images including featured image (featured is first, then gallery images)
   const allImages = [featuredImage, ...galleryImages];
 
@@ -50,7 +52,7 @@ export default function ItineraryDay({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImageIndex === null) return;
-      
+
       if (e.key === "Escape") {
         setSelectedImageIndex(null);
       } else if (e.key === "ArrowLeft") {
@@ -94,34 +96,34 @@ export default function ItineraryDay({
               Itinerary - Day {dayNumber}
             </h2>
           )}
-          
+
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left Side - Images */}
-          <div className="space-y-6">
-            {/* Featured Image - now clickable */}
-            <button
-              onClick={() => setSelectedImageIndex(0)}
-              className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.zIndex = '20';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.zIndex = '10';
-              }}
-            >
-              <div className="absolute inset-0 transition-all duration-300 group-hover:scale-[1.02]">
-                <CldImage
-                  src={featuredImage}
-                  alt={`${dayTitle} - Featured`}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-              {/* Subtle overlay on hover */}
-              <div className="absolute inset-0 bg-accent-navy/0 group-hover:bg-accent-navy/5 transition-colors duration-300" />
-            </button>
+            {/* Left Side - Images */}
+            <div className="space-y-6">
+              {/* Featured Image - now clickable */}
+              <button
+                onClick={() => setSelectedImageIndex(0)}
+                className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.zIndex = '20';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.zIndex = '10';
+                }}
+              >
+                <div className="absolute inset-0 transition-all duration-300 group-hover:scale-[1.02]">
+                  <CldImage
+                    src={featuredImage}
+                    alt={`${dayTitle} - Featured`}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+                {/* Subtle overlay on hover */}
+                <div className="absolute inset-0 bg-accent-navy/0 group-hover:bg-accent-navy/5 transition-colors duration-300" />
+              </button>
 
               {/* Gallery Row */}
               {galleryImages.length > 0 && (
@@ -174,9 +176,9 @@ export default function ItineraryDay({
               )}
             </div>
 
-          {/* Right Side - Text */}
-          <div className="lg:pl-8 flex flex-col">
-            <h2 className="
+            {/* Right Side - Text */}
+            <div className="lg:pl-8 flex flex-col">
+              <h2 className="
               font-display
               font-bold
               text-[32px]
@@ -186,51 +188,64 @@ export default function ItineraryDay({
               text-accent-navy
               mb-6
             ">
-              {dayTitle}
-            </h2>
-            <p className="
-              text-[16px]
-              lg:text-[17px]
-              leading-[1.75]
-              tracking-[0.015em]
-              text-accent-navy/70
-              font-light
-              whitespace-pre-line
-              mb-4
-            ">
-              {description}
-            </p>
-            
-            {/* Student Quote */}
-            {studentQuote && (
-              <div className="relative pl-6 border-l-2 border-accent-orange/30 mt-2">
-                <div className="absolute -left-1 top-0 w-2 h-2 bg-accent-orange rounded-full"></div>
-                <p className="
-                  text-[15px]
-                  lg:text-[16px]
-                  leading-[1.7]
-                  tracking-[0.01em]
-                  text-accent-navy/80
-                  font-light
-                  italic
-                ">
-                  "{studentQuote}"
-                </p>
-                <p className="
-                  text-[12px]
-                  lg:text-[13px]
-                  mt-3
-                  text-accent-navy/60
-                  font-light
-                  not-italic
-                ">
-                  — Student
-                </p>
-              </div>
-            )}
+                {dayTitle}
+              </h2>
+              <p
+                className="
+                text-[16px]
+                lg:text-[17px]
+                leading-[1.75]
+                tracking-[0.015em]
+                text-accent-navy/70
+                font-light
+                whitespace-pre-line
+                mb-4
+              "
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+
+              {/* Student Quote - Notion Style with Decorative Quote Icon */}
+              {studentQuote && (
+                <div className="mt-12 mb-4 relative">
+                  <div className="flex gap-4 items-start">
+                    {/* Large Decorative Quote Icon */}
+                    <div className="flex-shrink-0 mt-1">
+                      <svg width="32" height="28" viewBox="0 0 32 28" fill="none" className="text-accent-navy/20">
+                        <path d="M0 13.3V0h12.74v12.91c0 5.94-3.06 9.16-9.19 10.66l-1.62-2.61c3.63-1.11 5.02-3.12 5.02-5.78H0v-1.88zm19.26 0V0H32v12.91c0 5.94-3.06 9.16-9.19 10.66l-1.62-2.61c3.63-1.11 5.02-3.12 5.02-5.78h-6.95v-1.88z" fill="currentColor" />
+                      </svg>
+                    </div>
+
+                    {/* Quote Content */}
+                    <div className="flex-1 pl-2 border-l-[3px] border-accent-navy/15">
+                      <p className="
+                      text-[17px]
+                      lg:text-[18px]
+                      leading-[1.7]
+                      tracking-[0.01em]
+                      text-accent-navy/85
+                      font-light
+                      italic
+                      mb-5
+                    ">
+                        {studentQuote}
+                      </p>
+
+                      <div className="flex items-center gap-3">
+                        <span className="text-[12px] lg:text-[13px] font-bold text-accent-navy tracking-widest uppercase">
+                          {studentName?.split(',')[0] || "Student"}
+                        </span>
+                        <span className="w-1 h-1 bg-accent-navy/20 rounded-full" />
+                        <span className="text-[11px] lg:text-[12px] font-light text-accent-navy/50">
+                          {studentName?.includes(',') ? studentName.split(',').slice(1).join(',').trim() : ""}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       {/* Popup Modal - High-res lightbox with navigation */}
@@ -243,7 +258,7 @@ export default function ItineraryDay({
             className="absolute inset-0 bg-black/70 z-0"
             onClick={() => setSelectedImageIndex(null)}
           />
-          
+
           {/* Image container with content below (positioned ABOVE backdrop) */}
           <div
             className="relative z-10 flex flex-col items-center max-w-[90vw] max-h-[90vh]"
@@ -267,7 +282,7 @@ export default function ItineraryDay({
                   }}
                 />
               </div>
-              
+
               {/* Counter and Caption section */}
               <div className="px-8 pb-6 space-y-3">
                 {/* Image counter */}
@@ -276,9 +291,9 @@ export default function ItineraryDay({
                     {selectedImageIndex + 1} / {allImages.length}
                   </span>
                 </div>
-                
+
                 {/* Caption - width locked to image width */}
-                <p 
+                <p
                   className="mx-auto text-center text-accent-navy/70 text-[13px] lg:text-[14px] font-light leading-relaxed whitespace-normal break-words"
                   style={{ width: imgWidth ? `${imgWidth}px` : "auto" }}
                 >
@@ -286,7 +301,7 @@ export default function ItineraryDay({
                 </p>
               </div>
             </div>
-            
+
             {/* Close button - outside white container */}
             <button
               onClick={() => setSelectedImageIndex(null)}

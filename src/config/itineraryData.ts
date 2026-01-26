@@ -18,6 +18,7 @@ export interface ItineraryDay {
     caption: string;
   }>;
   studentQuote?: string;
+  studentName?: string;
 }
 
 export const itineraryData: ItineraryDay[] = [
@@ -27,7 +28,7 @@ export const itineraryData: ItineraryDay[] = [
   {
     dayNumber: 1,
     dayTitle: "Yiwu Small Merchandise Market",
-    description: "Students begin their immersion in Yiwu's Small Merchandise Market by stepping into the role of sellers rather than observers. Guided by Prof. Nicole C. Wang, each student is required to approach suppliers as a potential buyer or distributor, initiating real conversations about pricing, minimum order quantities (MOQs), customization options, packaging, and delivery timelines.\n\nThis role-based interaction allows students to uncover operational details that are rarely visible in textbooks—how products are priced across different order scales, how negotiations unfold in practice, and how suppliers position themselves within dense competitive environments.\n\nSpanning over 6.4 million square meters, Yiwu's Small Merchandise Market comprises 75,000 stalls and attracts around 220,000 visitors daily.",
+    description: "Students begin their immersion in Yiwu's Small Merchandise Market by stepping into the role of sellers rather than observers. Guided by Prof. Nicole C. Wang, <span class='text-accent-orange font-bold'>each student is required to approach suppliers as a potential buyer or distributor</span>, initiating real conversations about pricing, minimum order quantities (MOQs), customization options, packaging, and delivery timelines.\n\nThis role-based interaction allows students to uncover operational details that are rarely visible in textbooks—how products are priced across different order scales, how negotiations unfold in practice, and how suppliers position themselves within dense competitive environments.\n\nSpanning over 6.4 million square meters, Yiwu's Small Merchandise Market comprises 75,000 stalls and attracts around 220,000 visitors daily.",
 
     // Featured Image (the big one)
     featuredImage: {
@@ -55,7 +56,8 @@ export const itineraryData: ItineraryDay[] = [
       }
     ],
 
-    studentQuote: "This experience completely changed my understanding of global supply chains. Talking directly with suppliers gave me insights I never could have learned from a textbook."
+    studentQuote: "In Yiwu, I saw how real businesses happen in many forms. I learned how to dive into unfamiliar fields quickly—not only through the internet and AI tools, but through first-hand information and real negotiations.",
+    studentName: "Luyi, '26, Business and Finance"
   },
 
   // ============================================
@@ -64,29 +66,29 @@ export const itineraryData: ItineraryDay[] = [
   {
     dayNumber: 2,
     dayTitle: "Company Visits",
-    description: "Dive deeper into supplier relationships. Students engage directly with merchants, learning negotiation tactics, MOQ requirements, and quality assessment. Site visits to manufacturing facilities provide insight into production processes and cost structures.",
+    description: "Day 2 focuses on understanding Yiwu not only as a manufacturing hub, but as a full global supply chain ecosystem that connects production, global distribution, platform-driven e-commerce and brands.\n\nRather than viewing supply chains as a linear process, students explore how <span class='text-accent-orange font-bold'>value is created across multiple layers</span> — from factory-floor operations and semi-automated assembly, to cross-border e-commerce infrastructure, livestream service platforms, and creator-enabled retail models. These visits highlight how modern entrepreneurship in China often <span class='text-accent-orange font-bold'>emerges through networks of suppliers, data systems, incubators, and commerce services, not isolated firms</span>.",
 
     featuredImage: {
       cloudinaryId: "IMG_20250927_113548_nr7tx6",
-      caption: "Day 2 - Caption for featured image"
+      caption: "Students observe warehouse operations at a Southeast Asia–focused cross-border e-commerce company, where data-driven demand analysis informs supplier matching, sourcing, and end-to-end fulfillment before shipment."
     },
 
     galleryImages: [
       {
         cloudinaryId: "IMG_2865_phpyjx",
-        caption: "Day 2 - Gallery image 1 caption"
+        caption: "Students visit a major cosmetics supplier serving Western markets, learning about core formulation and manufacturing processes in the company’s product showroom."
       },
       {
         cloudinaryId: "IMG_2902_qiy6h7",
-        caption: "Day 2 - Gallery image 2 caption"
+        caption: "Students observe workers assembling pressed powder products for Western beauty brands. Certain production steps remain semi-automated, requiring human–machine collaboration to ensure precision, consistency, and brand-specific standards."
       },
       {
         cloudinaryId: "IMG_2803_cit9uz",
-        caption: "Day 2 - Gallery image 3 caption"
+        caption: "Students visit a live-commerce office complex that brings together technology, data, training, and incubation services to support brands and manufacturers entering livestream e-commerce."
       },
       {
         cloudinaryId: "IMG_2824_nmpjtn",
-        caption: "Day 2 - Gallery image 4 caption"
+        caption: "The manager of a jewelry supplier explains emerging supply and distribution models, from small-batch wholesale to livestream “walk-and-sell” formats. These models enable individual creators to operate lean, one-person businesses while remaining connected to larger supply chains."
       }
     ]
   }
