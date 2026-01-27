@@ -15,6 +15,7 @@ export default function ItinerarySection() {
     ],
     studentQuote: day.studentQuote || "",
     studentName: day.studentName || "Student",
+    companiesVisited: day.companiesVisited,
   }));
 
   return (
@@ -32,6 +33,7 @@ export default function ItinerarySection() {
             imageCaptions={day.imageCaptions}
             studentQuote={day.studentQuote}
             studentName={day.studentName}
+            companiesVisited={day.companiesVisited}
             showTitle={true}
           />
         ))}

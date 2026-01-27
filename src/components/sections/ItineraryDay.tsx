@@ -12,6 +12,10 @@ interface ItineraryDayProps {
   imageCaptions?: string[]; // Array of captions: [featuredCaption, gallery1, gallery2, ...]
   studentQuote?: string;
   studentName?: string;
+  companiesVisited?: Array<{
+    name: string;
+    description: string;
+  }>;
   showTitle?: boolean;
 }
 
@@ -24,6 +28,7 @@ export default function ItineraryDay({
   imageCaptions,
   studentQuote,
   studentName,
+  companiesVisited,
   showTitle = false,
 }: ItineraryDayProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -175,69 +180,143 @@ export default function ItineraryDay({
                 </div>
               )}
             </div>
-
             {/* Right Side - Text */}
-            <div className="lg:pl-8 flex flex-col">
+            <div className="flex flex-col">
               <h2 className="
-              font-display
-              font-bold
-              text-[32px]
-              lg:text-[36px]
-              leading-[1.2]
-              tracking-tight
-              text-accent-navy
-              mb-6
-            ">
+                font-display
+                font-bold
+                text-[32px]
+                lg:text-[36px]
+                leading-none
+                tracking-tight
+                text-accent-navy
+                mb-4
+                mt-0
+              ">
                 {dayTitle}
               </h2>
-              <p
-                className="
-                text-[16px]
-                lg:text-[17px]
-                leading-[1.75]
-                tracking-[0.015em]
-                text-accent-navy/70
-                font-light
-                whitespace-pre-line
-                mb-4
-              "
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
 
-              {/* Student Quote - Notion Style with Decorative Quote Icon */}
+              <div className="space-y-4">
+                {description.split('\n\n').map((para, idx) => (
+                  <p
+                    key={idx}
+                    className="
+                      text-[15px]
+                      lg:text-[16px]
+                      leading-[1.65]
+                      tracking-[0.01em]
+                      text-accent-navy/70
+                      font-light
+                    "
+                    dangerouslySetInnerHTML={{ __html: para }}
+                  />
+                ))}
+              </div>
+
+              {/* Companies Visited Section */}
+              {companiesVisited && companiesVisited.length > 0 && (
+                <div className="mt-6 mb-6">
+                  <h3 className="
+                    text-[14px]
+                    lg:text-[15px]
+                    font-semibold
+                    tracking-[0.08em]
+                    uppercase
+                    text-accent-navy/60
+                    mb-3
+                    letter-spacing-wide
+                  ">
+                    Companies Visited
+                  </h3>
+
+                  <div className="bg-accent-navy/[0.02] border border-accent-navy/[0.08] rounded-xl px-4 py-3 lg:px-5 lg:py-3.5">
+                    <ul className="space-y-2.5">
+                      {companiesVisited.map((company, idx) => (
+                        <li key={idx} className="flex gap-2.5 items-start">
+                          {/* Custom bullet point */}
+                          <div className="flex-shrink-0 mt-1.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-accent-orange" />
+                          </div>
+
+                          {/* Company info */}
+                          <div className="flex-1">
+                            <div className="
+                              text-[14px]
+                              lg:text-[15px]
+                              font-medium
+                              text-accent-navy
+                              leading-tight
+                              mb-0.5
+                            ">
+                              {company.name}
+                            </div>
+                            <div className="
+                              text-[13px]
+                              lg:text-[14px]
+                              text-accent-navy/60
+                              font-light
+                              leading-relaxed
+                            ">
+                              {company.description}
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Student Quote - Dark Card Style */}
               {studentQuote && (
-                <div className="mt-12 mb-4 relative">
-                  <div className="flex gap-4 items-start">
-                    {/* Large Decorative Quote Icon */}
-                    <div className="flex-shrink-0 mt-1">
-                      <svg width="32" height="28" viewBox="0 0 32 28" fill="none" className="text-accent-navy/20">
-                        <path d="M0 13.3V0h12.74v12.91c0 5.94-3.06 9.16-9.19 10.66l-1.62-2.61c3.63-1.11 5.02-3.12 5.02-5.78H0v-1.88zm19.26 0V0H32v12.91c0 5.94-3.06 9.16-9.19 10.66l-1.62-2.61c3.63-1.11 5.02-3.12 5.02-5.78h-6.95v-1.88z" fill="currentColor" />
+                <div className="mt-8 mb-4 relative w-full">
+                  <div className="relative bg-accent-navy rounded-xl p-6 lg:px-8 lg:py-7 overflow-hidden">
+                    {/* Decorative Quote Marks - Top Left */}
+                    <div className="absolute top-3 left-3 opacity-20">
+                      <svg width="28" height="24" viewBox="0 0 48 40" fill="none">
+                        <path d="M0 19.95V0h19.11v19.37c0 8.91-4.59 13.74-13.79 15.99l-2.43-3.91c5.45-1.67 7.53-4.68 7.53-8.67H0v-2.83zm28.89 0V0H48v19.37c0 8.91-4.59 13.74-13.79 15.99l-2.43-3.91c5.45-1.67 7.53-4.68 7.53-8.67h-10.42v-2.83z" fill="#D4A574" />
+                      </svg>
+                    </div>
+
+                    {/* Decorative Quote Marks - Bottom Right */}
+                    <div className="absolute bottom-3 right-3 opacity-20 rotate-180">
+                      <svg width="28" height="24" viewBox="0 0 48 40" fill="none">
+                        <path d="M0 19.95V0h19.11v19.37c0 8.91-4.59 13.74-13.79 15.99l-2.43-3.91c5.45-1.67 7.53-4.68 7.53-8.67H0v-2.83zm28.89 0V0H48v19.37c0 8.91-4.59 13.74-13.79 15.99l-2.43-3.91c5.45-1.67 7.53-4.68 7.53-8.67h-10.42v-2.83z" fill="#D4A574" />
                       </svg>
                     </div>
 
                     {/* Quote Content */}
-                    <div className="flex-1 pl-2 border-l-[3px] border-accent-navy/15">
+                    <div className="relative z-10">
                       <p className="
-                      text-[17px]
-                      lg:text-[18px]
-                      leading-[1.7]
-                      tracking-[0.01em]
-                      text-accent-navy/85
-                      font-light
-                      italic
-                      mb-5
-                    ">
+                        text-[14px]
+                        lg:text-[15px]
+                        leading-[1.6]
+                        tracking-[0.01em]
+                        text-white/90
+                        font-light
+                        italic
+                        mb-4
+                        pr-6
+                      ">
                         {studentQuote}
                       </p>
 
-                      <div className="flex items-center gap-3">
-                        <span className="text-[12px] lg:text-[13px] font-bold text-accent-navy tracking-widest uppercase">
-                          {studentName?.split(',')[0] || "Student"}
-                        </span>
-                        <span className="w-1 h-1 bg-accent-navy/20 rounded-full" />
-                        <span className="text-[11px] lg:text-[12px] font-light text-accent-navy/50">
-                          {studentName?.includes(',') ? studentName.split(',').slice(1).join(',').trim() : ""}
-                        </span>
+                      {/* Attribution Line */}
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 h-[1px] bg-white/10" />
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          <span className="text-[11px] lg:text-[12px] font-medium text-white/80 tracking-wide whitespace-nowrap">
+                            {studentName?.split(',')[0] || "Student"}
+                          </span>
+                          {studentName?.includes(',') && (
+                            <>
+                              <span className="w-1 h-1 bg-white/20 rounded-full" />
+                              <span className="text-[10px] lg:text-[11px] font-light text-white/50 whitespace-nowrap">
+                                {studentName.split(',').slice(1).join(',').trim()}
+                              </span>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

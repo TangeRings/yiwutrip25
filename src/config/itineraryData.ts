@@ -19,6 +19,10 @@ export interface ItineraryDay {
   }>;
   studentQuote?: string;
   studentName?: string;
+  companiesVisited?: Array<{
+    name: string;
+    description: string;
+  }>;
 }
 
 export const itineraryData: ItineraryDay[] = [
@@ -57,7 +61,7 @@ export const itineraryData: ItineraryDay[] = [
     ],
 
     studentQuote: "In Yiwu, I saw how real businesses happen in many forms. I learned how to dive into unfamiliar fields quickly—not only through the internet and AI tools, but through first-hand information and real negotiations.",
-    studentName: "Luyi, '26, Business and Finance"
+    studentName: "Luyi Yang, '26, Business and Finance"
   },
 
   // ============================================
@@ -67,6 +71,26 @@ export const itineraryData: ItineraryDay[] = [
     dayNumber: 2,
     dayTitle: "Company Visits",
     description: "Day 2 focuses on understanding Yiwu not only as a manufacturing hub, but as a full global supply chain ecosystem that connects production, global distribution, platform-driven e-commerce and brands.\n\nRather than viewing supply chains as a linear process, students explore how <span class='text-accent-orange font-bold'>value is created across multiple layers</span> — from factory-floor operations and semi-automated assembly, to cross-border e-commerce infrastructure, livestream service platforms, and creator-enabled retail models. These visits highlight how modern entrepreneurship in China often <span class='text-accent-orange font-bold'>emerges through networks of suppliers, data systems, incubators, and commerce services, not isolated firms</span>.",
+
+    companiesVisited: [
+      {
+        name: "Livestream Commerce Support Services",
+        description: "data analytics, conversion tools, and platform infrastructure"
+      },
+      {
+        name: "Jewelry Factory Showroom & Supply Models",
+        description: "wholesale networks and creator-driven 'walk-and-sell' commerce"
+      },
+      {
+        name: "Southeast Asia Cross-Border E-Commerce Operator",
+        description: "demand-driven sourcing and warehouse fulfillment"
+      },
+      {
+        name: "Cosmetics OEM Manufacturer",
+        description: "large-scale formulation, production, and semi-automated assembly"
+      }
+    ],
+
 
     featuredImage: {
       cloudinaryId: "IMG_20250927_113548_nr7tx6",
