@@ -46,9 +46,12 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105">
+            <Link
+              href="#contact"
+              className="px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105 inline-block"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,9 +91,13 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <button className="w-full mt-4 px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all">
+            <Link
+              href="#contact"
+              className="block w-full mt-4 px-6 py-2.5 bg-accent-orange text-center text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all"
+              onClick={() => setIsOpen(false)}
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         )}
       </div>

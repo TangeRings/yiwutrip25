@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-24 border-t border-accent-navy/10 bg-white/40" data-scroll-section>
+    <footer id="contact" className="py-24 border-t border-accent-navy/10 bg-white/40" data-scroll-section>
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row lg:items-center">
 
