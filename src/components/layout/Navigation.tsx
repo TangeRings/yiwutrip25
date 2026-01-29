@@ -50,7 +50,7 @@ export default function Navigation() {
               href="#contact"
               className="px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105 inline-block"
             >
-              Get Started
+              Follow Us
             </Link>
           </div>
 
@@ -96,7 +96,7 @@ export default function Navigation() {
               className="block w-full mt-4 px-6 py-2.5 bg-accent-orange text-center text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all"
               onClick={() => setIsOpen(false)}
             >
-              Get Started
+              Follow Us
             </Link>
           </div>
         )}
