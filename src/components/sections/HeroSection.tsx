@@ -8,7 +8,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section id="home" className="pt-24 pb-12 lg:pt-32 lg:pb-16">
+      <section id="home" className="pt-16 pb-12 lg:pt-24 lg:pb-16">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Side - Big Typography */}
@@ -17,10 +17,10 @@ export default function HeroSection() {
                 <h1 className="
                   font-display 
                   font-bold 
-                  text-[48px] 
-                  sm:text-[40px] 
-                  lg:text-[50px] 
-                  xl:text-[53px]
+                  text-[42px] 
+                  sm:text-[36px] 
+                  lg:text-[44px] 
+                  xl:text-[48px]
                   leading-[0.95] 
                   tracking-tight
                   text-accent-navy
@@ -30,10 +30,10 @@ export default function HeroSection() {
                 <h1 className="
                   font-display 
                   font-bold 
-                  text-[48px] 
-                  sm:text-[40px] 
-                  lg:text-[50px] 
-                  xl:text-[53px]
+                  text-[42px] 
+                  sm:text-[36px] 
+                  lg:text-[44px] 
+                  xl:text-[48px]
                   leading-[0.95] 
                   tracking-tight
                   text-accent-navy
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
               {/* Hero Image */}
               <div className="mt-8 lg:mt-10">
-                <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative w-full aspect-[16/8.1] rounded-3xl overflow-hidden shadow-2xl">
                   <CldImage
                     src="IMG_2743_puu9k3"
                     alt="Yiwu Market"
@@ -67,52 +67,54 @@ export default function HeroSection() {
 
               {/* Faculty Quote */}
               <div className="mt-8 lg:mt-12 max-w-2xl">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                  {/* Professor Portrait */}
-                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-accent-navy/10 shadow-sm mx-auto sm:mx-0">
-                    <CldImage
-                      src="touched_portrait_vn67jh"
-                      alt="Prof. Nicole C. Wang"
-                      fill
-                      className="object-cover object-[center_25%]"
-                      sizes="(max-width: 768px) 64px, 80px"
-                    />
-                  </div>
-
-                  {/* Quote Content */}
-                  <div className="relative flex-1">
-                    {/* Opening Quote Icon */}
-                    <div className="absolute -top-3 -left-4 sm:-left-6 text-[#1E40AF] pointer-events-none">
-                      {/* "66" shape for opening */}
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="sm:w-8 sm:h-8">
-                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" transform="rotate(180 12 12)" />
-                      </svg>
+                <div className="bg-white/60 backdrop-blur-sm border border-accent-navy/5 rounded-2xl p-5 shadow-[0_2px_20px_-4px_rgba(27,27,58,0.05)]">
+                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    {/* Professor Portrait */}
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-accent-navy/10 shadow-sm mx-auto sm:mx-0 bg-white">
+                      <CldImage
+                        src="touched_portrait_vn67jh"
+                        alt="Prof. Nicole C. Wang"
+                        fill
+                        className="object-cover object-[center_25%]"
+                        sizes="(max-width: 768px) 64px, 80px"
+                      />
                     </div>
 
-                    <div className="relative z-10 pl-4 sm:pl-6">
-                      <p className="
-                        font-display
-                        text-[16px]
-                        lg:text-[17px]
-                        leading-[1.6]
-                        tracking-tight
-                        text-accent-navy/90
-                        italic
-                      ">
-                        This trip allows our students to witness firsthand how innovation in supply chain, logistics, and digital creativity come together to power the online economy.
-                        <span className="inline-block align-bottom ml-1 text-[#1E40AF]">
-                          {/* "99" shape for closing */}
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="sm:w-6 sm:h-6">
-                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" />
-                          </svg>
-                        </span>
-                      </p>
+                    {/* Quote Content */}
+                    <div className="relative flex-1">
+                      {/* Opening Quote Icon */}
+                      <div className="absolute -top-2 -left-3 sm:-left-5 text-[#1E40AF] pointer-events-none opacity-90">
+                        {/* "66" shape for opening */}
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="sm:w-7 sm:h-7">
+                          <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" transform="rotate(180 12 12)" />
+                        </svg>
+                      </div>
 
-                      {/* Right Aligned Attribution */}
-                      <div className="mt-3 flex justify-end">
-                        <p className="font-display text-[13px] lg:text-[14px] text-accent-navy/70 tracking-tight">
-                          — Prof. Nicole C. Wang, <span className="italic">Interactive Media & Business</span>
+                      <div className="relative z-10 pl-3 sm:pl-5">
+                        <p className="
+                          font-display
+                          text-[16px]
+                          lg:text-[17px]
+                          leading-[1.6]
+                          tracking-tight
+                          text-accent-navy/90
+                          italic
+                        ">
+                          This trip allows our students to witness firsthand how innovation in supply chain, logistics, and digital creativity come together to power the online economy.
+                          <span className="inline-block align-bottom ml-1 text-[#1E40AF] opacity-90">
+                            {/* "99" shape for closing */}
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="sm:w-5 sm:h-5">
+                              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" />
+                            </svg>
+                          </span>
                         </p>
+
+                        {/* Right Aligned Attribution */}
+                        <div className="mt-3 flex justify-end">
+                          <p className="font-display text-[13px] lg:text-[14px] text-accent-navy/70 tracking-tight">
+                            — Prof. Nicole C. Wang, <span className="italic">Interactive Media & Business</span>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
