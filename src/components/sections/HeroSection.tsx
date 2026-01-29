@@ -38,7 +38,7 @@ export default function HeroSection() {
                   tracking-tight
                   text-accent-navy
                 ">
-                  Small Merchant Market
+                  Small Merchandise Market
                 </h1>
 
               </div>
@@ -66,29 +66,54 @@ export default function HeroSection() {
               </div>
 
               {/* Faculty Quote */}
-              <div className="mt-8 lg:mt-10">
-                <div className="relative pl-6 border-l-[3px] border-accent-orange/40">
-                  <p className="
-                    text-[16px]
-                    lg:text-[18px]
-                    leading-[1.7]
-                    tracking-[0.01em]
-                    text-accent-navy/85
-                    font-light
-                    italic
-                    mb-4
-                  ">
-                    "This trip allows our students to witness firsthand how innovation in supply chain, logistics, and digital creativity come together to power the online economy."
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-[1px] bg-accent-navy/20" />
-                    <div>
-                      <p className="text-[12px] font-bold text-accent-navy uppercase tracking-wider leading-none mb-1">
-                        Prof. Nicole C. Wang
+              <div className="mt-8 lg:mt-12 max-w-2xl">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                  {/* Professor Portrait */}
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-accent-navy/10 shadow-sm mx-auto sm:mx-0">
+                    <CldImage
+                      src="touched_portrait_vn67jh"
+                      alt="Prof. Nicole C. Wang"
+                      fill
+                      className="object-cover object-[center_25%]"
+                      sizes="(max-width: 768px) 64px, 80px"
+                    />
+                  </div>
+
+                  {/* Quote Content */}
+                  <div className="relative flex-1">
+                    {/* Opening Quote Icon */}
+                    <div className="absolute -top-3 -left-4 sm:-left-6 text-[#1E40AF] pointer-events-none">
+                      {/* "66" shape for opening */}
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="sm:w-8 sm:h-8">
+                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" transform="rotate(180 12 12)" />
+                      </svg>
+                    </div>
+
+                    <div className="relative z-10 pl-4 sm:pl-6">
+                      <p className="
+                        font-display
+                        text-[16px]
+                        lg:text-[17px]
+                        leading-[1.6]
+                        tracking-tight
+                        text-accent-navy/90
+                        italic
+                      ">
+                        This trip allows our students to witness firsthand how innovation in supply chain, logistics, and digital creativity come together to power the online economy.
+                        <span className="inline-block align-bottom ml-1 text-[#1E40AF]">
+                          {/* "99" shape for closing */}
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="sm:w-6 sm:h-6">
+                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H13.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91241 16 5.017 16H8.017V14C8.017 11.7909 6.22612 10 4.01699 10H2.01699V8H4.01699C7.3307 8 10.017 10.6863 10.017 14V21H3.017Z" />
+                          </svg>
+                        </span>
                       </p>
-                      <p className="text-[11px] font-light text-accent-navy/50">
-                        Interactive Media & Business
-                      </p>
+
+                      {/* Right Aligned Attribution */}
+                      <div className="mt-3 flex justify-end">
+                        <p className="font-display text-[13px] lg:text-[14px] text-accent-navy/70 tracking-tight">
+                          — Prof. Nicole C. Wang, <span className="italic">Interactive Media & Business</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
