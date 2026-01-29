@@ -375,9 +375,8 @@ export default function ItineraryDay({
                 <p
                   className="mx-auto text-center text-accent-navy/70 text-[13px] lg:text-[14px] font-light leading-relaxed whitespace-normal break-words"
                   style={{ width: imgWidth ? `${imgWidth}px` : "auto" }}
-                >
-                  {imageCaptions && imageCaptions[selectedImageIndex] ? imageCaptions[selectedImageIndex] : "No caption available"}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: imageCaptions && imageCaptions[selectedImageIndex] ? imageCaptions[selectedImageIndex] : "No caption available" }}
+                />
               </div>
             </div>
 

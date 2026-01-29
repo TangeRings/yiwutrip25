@@ -112,7 +112,7 @@ export default function HeroSection() {
                         {/* Right Aligned Attribution */}
                         <div className="mt-3 flex justify-end">
                           <p className="font-display text-[13px] lg:text-[14px] text-accent-navy/70 tracking-tight">
-                            — Prof. Nicole C. Wang, <span className="italic">Interactive Media & Business</span>
+                            — Prof. <a href="https://tangerings.github.io/" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Nicole C. Wang</a>, <span className="text-[11px] lg:text-[12px] text-accent-navy/40 uppercase tracking-wider font-medium ml-1">Interactive Media & Business</span>
                           </p>
                         </div>
                       </div>
