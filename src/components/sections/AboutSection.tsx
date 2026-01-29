@@ -4,7 +4,7 @@ import { CldImage } from "next-cloudinary";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="py-24 bg-white/30">
+        <section id="about" className="flex items-start py-24 bg-white/30" data-scroll-section>
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
