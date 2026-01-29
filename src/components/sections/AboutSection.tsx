@@ -19,7 +19,7 @@ export default function AboutSection() {
                                     </h2>
                                 </div>
                                 <h3 className="font-display font-bold text-[30px] lg:text-[36px] leading-tight text-accent-navy">
-                                    Nicole C. Wang
+                                    <a href="https://tangerings.github.io/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-orange transition-colors">Nicole C. Wang</a>
                                 </h3>
                             </div>
 
@@ -36,7 +36,7 @@ export default function AboutSection() {
                                 </div>
 
                                 <p className="mb-4">
-                                    Professor Nicole C. Wang is an Assistant Professor of Practice in <span className="text-accent-navy font-semibold">Interactive Media Business (IMB)</span> at NYU Shanghai and a CFA Charterholder. Her work explores the intersections of AI, storytelling, and creative entrepreneurship, bringing deep practical insight into her teaching on entrepreneurship, SMEs, and brand building.
+                                    Professor <a href="https://tangerings.github.io/" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Nicole C. Wang</a> is an Assistant Professor of Practice in <span className="text-accent-navy font-semibold">Interactive Media Business (IMB)</span> at NYU Shanghai. Her work explores the intersections of AI, storytelling, and creative entrepreneurship, bringing deep practical insight into her teaching on entrepreneurship, SMEs, and brand building.
                                 </p>
                                 <p>
                                     Beyond academia, she is a social media content creator, an independent product manager, and a "vibe coder," dedicated to designing experiential learning through emerging technologies and AI-powered curricula.
@@ -56,21 +56,29 @@ export default function AboutSection() {
                                 <h3 className="font-display font-bold text-[24px] lg:text-[28px] text-accent-navy">
                                     Entrepreneurship Experienced
                                 </h3>
-                                <p className="text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
-                                    This study trip is an integral part of the <span className="font-medium text-accent-navy">Entrepreneurship Experienced</span> course, where students apply lean startup methodologies in real-world contexts. By stepping into Yiwu's market, students move beyond theory to validate business concepts, negotiate with suppliers, and navigate the intricacies of global supply chains.
-                                </p>
                             </div>
 
-                            {/* Course Screenshot */}
-                            <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-lg border border-accent-navy/5 group cursor-pointer">
-                                <CldImage
-                                    src="ScreenShot_2026-01-29_201434_463_iezt9c"
-                                    alt="Entrepreneurship Experienced Course Web Page"
-                                    fill
-                                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                                    sizes="(max-width: 1024px) 100vw, 40vw"
-                                />
-                                <div className="absolute inset-0 bg-accent-navy/0 group-hover:bg-accent-navy/5 transition-colors duration-300" />
+                            <div className="text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
+                                {/* Course Screenshot - Smaller and Floated */}
+                                <a
+                                    href="https://sites.google.com/view/25fallentrepreneurship"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="float-left mr-5 mb-2 w-40 sm:w-48 aspect-[16/10] relative rounded-lg overflow-hidden shadow-md border border-accent-navy/5 group cursor-pointer block"
+                                >
+                                    <CldImage
+                                        src="ScreenShot_2026-01-29_201434_463_iezt9c"
+                                        alt="Entrepreneurship Experienced Course Web Page"
+                                        fill
+                                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.05]"
+                                        sizes="(max-width: 640px) 160px, 192px"
+                                    />
+                                    <div className="absolute inset-0 bg-accent-navy/0 group-hover:bg-accent-navy/5 transition-colors duration-300" />
+                                </a>
+
+                                <p>
+                                    This study trip is an integral part of the <a href="https://sites.google.com/view/25fallentrepreneurship" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Entrepreneurship Experienced</a> course, where students apply lean startup methodologies in real-world contexts. By stepping into Yiwu's market, students move beyond theory to validate business concepts, negotiate with suppliers, and navigate the intricacies of global supply chains.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -90,10 +98,7 @@ export default function AboutSection() {
                             </h3>
                             <div className="space-y-5 text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
                                 <p>
-                                    NYU Shanghai's Community Engagement Learning (CEL) program bridges academic engagement with the surrounding environment, connecting students and faculty with local communities across China.
-                                </p>
-                                <p>
-                                    By integrating academic learning with community-based research and service, CEL fosters reciprocal relationships that encourage students to explore China's rich culture, history, and development while gaining real-world problem-solving skills.
+                                    NYU Shanghai's <a href="https://shanghai.nyu.edu/undergraduate/community-engaged-learning" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Community-Engaged Learning (CEL) program</a> serves as a vital bridge between academic study and the surrounding environment. By cultivating reciprocal relationships across Shanghai and greater China, the program integrates classroom learning with community-based research and service, empowering students and faculty to incorporate meaningful community engagement into their academic practices.
                                 </p>
                             </div>
                         </div>
@@ -111,22 +116,12 @@ export default function AboutSection() {
                             </h3>
                             <div className="space-y-5 text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
                                 <p>
-                                    The Interactive Media & Business (IMB) major at NYU Shanghai is an interdisciplinary program where innovation and business converge through emerging media and technology.
-                                </p>
-                                <p>
-                                    Students learn to integrate innovative ideas with technology, creativity, and business principles to develop viable products and experiences. The program fosters a "design-and-build" mindset, preparing graduates to solve complex business problems through creative, tech-enabled solutions.
+                                    The <a href="https://shanghai.nyu.edu/academics/majors/interactive-media-and-business" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Interactive Media + Business (IMB) major</a> is where innovation + business meets through emerging media technology. It teaches how innovative ideas combine with technology, creativity and business principles to yield viable products, services, and experiences.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Footer decoration */}
-                        <div className="pt-12 border-t border-accent-navy/10 flex justify-between items-center text-[12px] uppercase tracking-[0.2em] text-accent-navy/40">
-                            <span>Innovation</span>
-                            <span className="text-accent-orange">★</span>
-                            <span>Community</span>
-                            <span className="text-accent-orange">★</span>
-                            <span>Business</span>
-                        </div>
+
                     </div>
 
                 </div>
