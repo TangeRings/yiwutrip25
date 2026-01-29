@@ -41,7 +41,9 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center space-x-4 pb-[2px]">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/nicole-c-wang-cfa-50a59b315/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-2xl bg-white shadow-[0_2px_12px_-3px_rgba(27,27,58,0.06)] border border-accent-navy/5 flex items-center justify-center text-accent-navy/80 hover:text-accent-orange hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
                 aria-label="LinkedIn"
               >
@@ -50,7 +52,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://x.com/ninicwang"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-2xl bg-white shadow-[0_2px_12px_-3px_rgba(27,27,58,0.06)] border border-accent-navy/5 flex items-center justify-center text-accent-navy/80 hover:text-accent-orange hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
                 aria-label="X (Twitter)"
               >
