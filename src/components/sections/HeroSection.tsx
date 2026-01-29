@@ -65,21 +65,33 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Participant Quote */}
+              {/* Faculty Quote */}
               <div className="mt-8 lg:mt-10">
-                <blockquote className="relative pl-6 border-l-2 border-accent-orange/30">
+                <div className="relative pl-6 border-l-[3px] border-accent-orange/40">
                   <p className="
                     text-[16px]
-                    lg:text-[17px]
+                    lg:text-[18px]
                     leading-[1.7]
                     tracking-[0.01em]
-                    text-accent-navy/80
+                    text-accent-navy/85
                     font-light
                     italic
+                    mb-4
                   ">
-                    "This experience transformed how I understand entrepreneurship. Being in Yiwu's market and seeing real suppliers negotiate changed everything."
+                    "This trip allows our students to witness firsthand how innovation in supply chain, logistics, and digital creativity come together to power the online economy."
                   </p>
-                </blockquote>
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-[1px] bg-accent-navy/20" />
+                    <div>
+                      <p className="text-[12px] font-bold text-accent-navy uppercase tracking-wider leading-none mb-1">
+                        Prof. Nicole C. Wang
+                      </p>
+                      <p className="text-[11px] font-light text-accent-navy/50">
+                        Interactive Media & Business
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
