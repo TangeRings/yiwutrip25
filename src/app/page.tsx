@@ -21,9 +21,7 @@ export default function Home() {
         <FeaturedWork />
       </div>
       */}
-      <div className="min-h-screen" data-scroll-section>
-        <Footer />
-      </div>
+      <Footer />
     </main>
   );
 }
