@@ -1,6 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import ItinerarySection from "@/components/sections/ItinerarySection";
+import AboutSection from "@/components/sections/AboutSection";
 // import FeaturedWork from "@/components/sections/FeaturedWork";
 import Footer from "@/components/layout/Footer";
 
@@ -12,6 +13,9 @@ export default function Home() {
         <HeroSection />
       </div>
       <ItinerarySection />
+
+      <AboutSection />
+
       {/* 
       <div className="min-h-screen" data-scroll-section>
         <FeaturedWork />
