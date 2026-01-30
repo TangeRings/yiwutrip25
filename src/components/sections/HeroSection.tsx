@@ -8,7 +8,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section id="home" className="pt-18 pb-12 lg:pt-24 lg:pb-16">
+      <section id="home" className="pt-18 pb-0 lg:pt-24 lg:pb-0">
         <div className="container mx-auto px-6 lg:px-16 max-w-[1400px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side - Big Typography */}
