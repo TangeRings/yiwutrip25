@@ -9,23 +9,23 @@ export default function AboutSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                     {/* Left Column - Nicole Profile */}
-                    <div className="space-y-12 lg:pt-0">
-                        <div className="space-y-8">
+                    <div className="space-y-8 lg:pt-0">
+                        <div className="space-y-6">
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-4">
                                     <div className="h-[1px] w-8 bg-accent-orange" />
-                                    <h2 className="text-[14px] font-semibold tracking-[0.15em] uppercase text-accent-orange">
+                                    <h2 className="text-[12px] font-semibold tracking-[0.12em] uppercase text-accent-orange">
                                         Lead Guide
                                     </h2>
                                 </div>
-                                <h3 className="font-display font-bold text-[30px] lg:text-[36px] leading-tight text-accent-navy">
+                                <h3 className="font-display font-bold text-[26px] lg:text-[30px] leading-tight text-accent-navy">
                                     <a href="https://tangerings.github.io/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-orange transition-colors">Nicole C. Wang</a>
                                 </h3>
                             </div>
 
-                            <div className="text-accent-navy/80 leading-[1.7] text-[16px] lg:text-[17px]">
+                            <div className="text-accent-navy/80 leading-[1.65] text-[14px] lg:text-[15px]">
                                 {/* Profile Image - Smaller and Floated */}
-                                <div className="float-left mr-5 mb-4 w-32 h-32 sm:w-40 sm:h-40 relative rounded-2xl overflow-hidden shadow-lg border border-accent-navy/5">
+                                <div className="float-left mr-5 mb-4 w-28 h-28 sm:w-32 sm:h-32 relative rounded-2xl overflow-hidden shadow-lg border border-accent-navy/5">
                                     <CldImage
                                         src="touched_portrait_vn67jh"
                                         alt="Nicole C. Wang"
@@ -45,20 +45,20 @@ export default function AboutSection() {
                         </div>
 
                         {/* Course Subsection */}
-                        <div className="space-y-6">
+                        <div className="space-y-5">
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-4">
                                     <div className="h-[1px] w-8 bg-accent-orange" />
-                                    <h2 className="text-[14px] font-semibold tracking-[0.15em] uppercase text-accent-orange">
+                                    <h2 className="text-[12px] font-semibold tracking-[0.12em] uppercase text-accent-orange">
                                         Course
                                     </h2>
                                 </div>
-                                <h3 className="font-display font-bold text-[24px] lg:text-[28px] text-accent-navy">
+                                <h3 className="font-display font-bold text-[22px] lg:text-[24px] text-accent-navy">
                                     Entrepreneurship Experienced
                                 </h3>
                             </div>
 
-                            <div className="text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
+                            <div className="text-accent-navy/70 leading-[1.7] text-[14px] lg:text-[15px]">
                                 {/* Course Screenshot - Smaller and Floated */}
                                 <a
                                     href="https://sites.google.com/view/25fallentrepreneurship"
@@ -84,19 +84,19 @@ export default function AboutSection() {
                     </div>
 
                     {/* Right Column - CEL & IMB Introduction */}
-                    <div className="space-y-16 lg:pt-10 lg:border-l lg:border-accent-navy/10 lg:pl-16">
+                    <div className="space-y-12 lg:pt-8 lg:border-l lg:border-accent-navy/10 lg:pl-12">
                         {/* CEL Section */}
                         <div className="space-y-6">
                             <div className="flex items-center space-x-4">
                                 <div className="h-[1px] w-8 bg-accent-orange" />
-                                <h2 className="text-[14px] font-semibold tracking-[0.1em] uppercase text-accent-orange">
+                                <h2 className="text-[12px] font-semibold tracking-[0.08em] uppercase text-accent-orange">
                                     About CEL
                                 </h2>
                             </div>
-                            <h3 className="font-display font-bold text-[28px] lg:text-[32px] text-accent-navy">
+                            <h3 className="font-display font-bold text-[24px] lg:text-[26px] text-accent-navy">
                                 Community Engagement Learning
                             </h3>
-                            <div className="space-y-5 text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
+                            <div className="space-y-4 text-accent-navy/70 leading-[1.7] text-[14px] lg:text-[15px]">
                                 <p>
                                     NYU Shanghai's <a href="https://shanghai.nyu.edu/undergraduate/community-engaged-learning" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Community-Engaged Learning (CEL) program</a> serves as a vital bridge between academic study and the surrounding environment. By cultivating reciprocal relationships across Shanghai and greater China, the program integrates classroom learning with community-based research and service, empowering students and faculty to incorporate meaningful community engagement into their academic practices.
                                 </p>
@@ -107,14 +107,14 @@ export default function AboutSection() {
                         <div className="space-y-6">
                             <div className="flex items-center space-x-4">
                                 <div className="h-[1px] w-8 bg-accent-orange" />
-                                <h2 className="text-[14px] font-semibold tracking-[0.1em] uppercase text-accent-orange">
+                                <h2 className="text-[12px] font-semibold tracking-[0.08em] uppercase text-accent-orange">
                                     About IMB
                                 </h2>
                             </div>
-                            <h3 className="font-display font-bold text-[28px] lg:text-[32px] text-accent-navy">
+                            <h3 className="font-display font-bold text-[24px] lg:text-[26px] text-accent-navy">
                                 Interactive Media & Business
                             </h3>
-                            <div className="space-y-5 text-accent-navy/70 leading-[1.75] text-[15px] lg:text-[16px]">
+                            <div className="space-y-4 text-accent-navy/70 leading-[1.7] text-[14px] lg:text-[15px]">
                                 <p>
                                     The <a href="https://shanghai.nyu.edu/academics/majors/interactive-media-and-business" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-bold hover:text-accent-orange transition-colors underline decoration-[#1E40AF]/20 underline-offset-2">Interactive Media + Business (IMB) major</a> is where innovation + business meets through emerging media technology. It teaches how innovative ideas combine with technology, creativity and business principles to yield viable products, services, and experiences.
                                 </p>
