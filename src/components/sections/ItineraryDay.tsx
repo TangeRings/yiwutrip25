@@ -96,7 +96,7 @@ export default function ItineraryDay({
               tracking-tight
               text-accent-navy
               mb-6 lg:mb-8
-              pt-28 lg:pt-32
+              pt-36 lg:pt-44
             ">
               Itinerary - Day {dayNumber}
             </h2>
@@ -350,11 +350,10 @@ export default function ItineraryDay({
                 <CldImage
                   src={allImages[selectedImageIndex]}
                   alt={`${dayTitle} - Image ${selectedImageIndex + 1}`}
-                  width={1800}
-                  height={1800}
+                  width={1600}
+                  height={1600}
                   className="block w-auto h-auto max-h-[70vh] max-w-[75vw] rounded-lg"
-                  quality={95}
-                  priority
+                  quality={80}
                   onLoad={(e) => {
                     const width = (e.currentTarget as HTMLImageElement).clientWidth;
                     setImgWidth(width);
