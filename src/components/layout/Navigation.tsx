@@ -15,16 +15,16 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-accent-navy/5">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-6 lg:px-16 max-w-[1400px]">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
               <div className="flex flex-col">
-                <span className="text-2xl font-display font-bold text-accent-navy">
+                <span className="text-[21px] font-display font-bold text-accent-navy">
                   Yiwu Business Study Trip
                 </span>
-                <span className="text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.015em] text-accent-navy/70 font-normal mt-0.5">
+                <span className="text-[12px] lg:text-[13px] leading-[1.5] tracking-[0.015em] text-accent-navy/70 font-normal mt-0.5">
                   by <span className="font-semibold text-accent-orange">CEL</span> × <span className="font-semibold text-accent-orange">IMB NYU Shanghai</span>, 09/2025
                 </span>
               </div>
@@ -37,7 +37,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium text-accent-navy/70 hover:text-accent-orange transition-colors duration-200"
+                className="text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.01em] font-medium text-accent-navy/70 hover:text-accent-orange transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -48,7 +48,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Link
               href="#contact"
-              className="px-6 py-2.5 bg-accent-orange text-white text-[14px] lg:text-[15px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105 inline-block"
+              className="px-5 py-2 bg-accent-orange text-white text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-200 hover:scale-105 inline-block"
             >
               Follow Us
             </Link>

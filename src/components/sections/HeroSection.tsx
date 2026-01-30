@@ -8,19 +8,19 @@ export default function HeroSection() {
 
   return (
     <>
-      <section id="home" className="pt-16 pb-12 lg:pt-24 lg:pb-16">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section id="home" className="pt-18 pb-12 lg:pt-24 lg:pb-16">
+        <div className="container mx-auto px-6 lg:px-16 max-w-[1400px]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side - Big Typography */}
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="
                   font-display 
                   font-bold 
-                  text-[42px] 
-                  sm:text-[36px] 
-                  lg:text-[44px] 
-                  xl:text-[48px]
+                  text-[36px] 
+                  sm:text-[32px] 
+                  lg:text-[40px] 
+                  xl:text-[44px]
                   leading-[0.95] 
                   tracking-tight
                   text-accent-navy
@@ -30,10 +30,10 @@ export default function HeroSection() {
                 <h1 className="
                   font-display 
                   font-bold 
-                  text-[42px] 
-                  sm:text-[36px] 
-                  lg:text-[44px] 
-                  xl:text-[48px]
+                  text-[36px] 
+                  sm:text-[32px] 
+                  lg:text-[40px] 
+                  xl:text-[44px]
                   leading-[0.95] 
                   tracking-tight
                   text-accent-navy
@@ -52,7 +52,7 @@ export default function HeroSection() {
                */}
 
               {/* Hero Image */}
-              <div className="mt-8 lg:mt-10">
+              <div className="mt-6 lg:mt-7">
                 <div className="relative w-full aspect-[16/8.1] rounded-3xl overflow-hidden shadow-2xl">
                   <CldImage
                     src="IMG_2743_puu9k3"
@@ -66,11 +66,11 @@ export default function HeroSection() {
               </div>
 
               {/* Faculty Quote */}
-              <div className="mt-8 lg:mt-12 max-w-2xl">
+              <div className="mt-6 lg:mt-9 max-w-2xl">
                 <div className="bg-white/60 backdrop-blur-sm border border-accent-navy/5 rounded-2xl p-5 shadow-[0_2px_20px_-4px_rgba(27,27,58,0.05)]">
                   <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                     {/* Professor Portrait */}
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-accent-navy/10 shadow-sm mx-auto sm:mx-0 bg-white">
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-full overflow-hidden border border-accent-navy/10 shadow-sm mx-auto sm:mx-0 bg-white">
                       <CldImage
                         src="touched_portrait_vn67jh"
                         alt="Prof. Nicole C. Wang"
@@ -93,8 +93,8 @@ export default function HeroSection() {
                       <div className="relative z-10 pl-3 sm:pl-5">
                         <p className="
                           font-display
-                          text-[16px]
-                          lg:text-[17px]
+                          text-[14px]
+                          lg:text-[15px]
                           leading-[1.6]
                           tracking-tight
                           text-accent-navy/90
@@ -123,12 +123,12 @@ export default function HeroSection() {
             </div>
 
             {/* Right Side - Description & CTA */}
-            <div className="space-y-8 lg:pl-8">
+            <div className="space-y-6 lg:pl-6">
               <h2 className="
                 font-display
                 font-semibold
-                text-[20px]
-                lg:text-[21px]
+                text-[16px]
+                lg:text-[18px]
                 leading-[1.3]
                 tracking-tight
                 text-accent-navy
@@ -137,8 +137,8 @@ export default function HeroSection() {
                 Small Businesses Are Actually Built
               </h2>
               <p className="
-                text-[17px]
-                lg:text-[19px]
+                text-[15px]
+                lg:text-[16px]
                 leading-[1.75]
                 tracking-[0.015em]
                 text-accent-navy/70
@@ -151,7 +151,7 @@ export default function HeroSection() {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => setIsVideoOpen(true)}
-                  className="group px-6 py-2.5 bg-accent-orange text-white text-[15px] lg:text-[16px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+                  className="group px-5 py-2 bg-accent-orange text-white text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-orange/90 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
                 >
                   <span className="flex items-center space-x-2.5">
                     <span>Watch the Video</span>
@@ -176,7 +176,7 @@ export default function HeroSection() {
                   href="https://www.nyu.sh.cn/news/yiwu-101-lessons-worlds-biggest-market"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group px-6 py-2.5 bg-accent-navy text-white text-[15px] lg:text-[16px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-navy/90 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg inline-block"
+                  className="group px-5 py-2 bg-accent-navy text-white text-[13px] lg:text-[14px] leading-[1.5] tracking-[0.01em] font-medium rounded-full hover:bg-accent-navy/90 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg inline-block"
                 >
                   <span className="flex items-center space-x-2.5">
                     <span>Read the News</span>
@@ -203,22 +203,22 @@ export default function HeroSection() {
               </div>
 
               {/* Stats or Additional Info */}
-              <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-accent-navy/10">
+              <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-accent-navy/10">
                 <div className="text-center">
                   <div className="text-[30px] lg:text-[32px] leading-[1.2] tracking-tight font-display font-bold text-accent-navy">25</div>
-                  <div className="text-[14px] lg:text-[15px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1">Participants</div>
+                  <div className="text-[12px] lg:text-[13px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1 whitespace-nowrap">Participants</div>
                 </div>
                 <div className="text-center">
                   <div className="text-[30px] lg:text-[32px] leading-[1.2] tracking-tight font-display font-bold text-accent-navy">3</div>
-                  <div className="text-[14px] lg:text-[15px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1">Days</div>
+                  <div className="text-[12px] lg:text-[13px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1 whitespace-nowrap">Days</div>
                 </div>
                 <div className="text-center">
                   <div className="text-[30px] lg:text-[32px] leading-[1.2] tracking-tight font-display font-bold text-accent-navy">5</div>
-                  <div className="text-[14px] lg:text-[15px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1">Districts Visited</div>
+                  <div className="text-[12px] lg:text-[13px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1 whitespace-nowrap">Districts Visited</div>
                 </div>
                 <div className="text-center">
                   <div className="text-[30px] lg:text-[32px] leading-[1.2] tracking-tight font-display font-bold text-accent-navy">4</div>
-                  <div className="text-[14px] lg:text-[15px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1">Companies Visited</div>
+                  <div className="text-[12px] lg:text-[13px] leading-[1.6] tracking-[0.01em] text-accent-navy/60 mt-1 whitespace-nowrap">Companies Visited</div>
                 </div>
               </div>
             </div>
