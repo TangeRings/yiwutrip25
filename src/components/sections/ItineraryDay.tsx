@@ -84,19 +84,19 @@ export default function ItineraryDay({
   return (
     <>
       <div className="min-h-screen flex items-start pt-0 pb-6 lg:pb-8 border-b border-accent-navy/10 last:border-b-0" data-scroll-section>
-        <div className="container mx-auto px-6 lg:px-12 w-full">
+        <div className="container mx-auto px-6 lg:px-16 max-w-[1400px] w-full">
           {/* Itinerary Title - Only show on first day, positioned above grid */}
           {showTitle && (
             <h2 className="
               font-display
               font-bold
-              text-[40px]
-              lg:text-[48px]
+              text-[30px]
+              lg:text-[34px]
               leading-[1.1]
               tracking-tight
               text-accent-navy
-              mb-8 lg:mb-10
-              pt-24 lg:pt-24
+              mb-6 lg:mb-8
+              pt-20 lg:pt-20
             ">
               Itinerary - Day {dayNumber}
             </h2>
@@ -185,9 +185,9 @@ export default function ItineraryDay({
               <h2 className="
                 font-display
                 font-bold
-                text-[32px]
-                lg:text-[36px]
-                leading-none
+                text-[24px]
+                lg:text-[26px]
+                leading-tight
                 tracking-tight
                 text-accent-navy
                 mb-4
@@ -201,9 +201,9 @@ export default function ItineraryDay({
                   <p
                     key={idx}
                     className="
-                      text-[15px]
-                      lg:text-[16px]
-                      leading-[1.65]
+                      text-[14px]
+                      lg:text-[14.5px]
+                      leading-[1.6]
                       tracking-[0.01em]
                       text-accent-navy/70
                       font-light
@@ -217,10 +217,10 @@ export default function ItineraryDay({
               {companiesVisited && companiesVisited.length > 0 && (
                 <div className="mt-6 mb-6">
                   <h3 className="
-                    text-[14px]
-                    lg:text-[15px]
+                    text-[12px]
+                    lg:text-[13px]
                     font-semibold
-                    tracking-[0.08em]
+                    tracking-[0.1em]
                     uppercase
                     text-accent-navy/60
                     mb-3
@@ -229,7 +229,7 @@ export default function ItineraryDay({
                     Companies Visited
                   </h3>
 
-                  <div className="bg-accent-navy/[0.02] border border-accent-navy/[0.08] rounded-xl px-4 py-3 lg:px-5 lg:py-3.5">
+                  <div className="bg-accent-navy/[0.02] border border-accent-navy/[0.08] rounded-xl px-4 py-2.5 lg:px-4 lg:py-3">
                     <ul className="space-y-2.5">
                       {companiesVisited.map((company, idx) => (
                         <li key={idx} className="flex gap-2.5 items-start">
@@ -241,8 +241,8 @@ export default function ItineraryDay({
                           {/* Company info */}
                           <div className="flex-1">
                             <div className="
-                              text-[14px]
-                              lg:text-[15px]
+                              text-[13px]
+                              lg:text-[14px]
                               font-medium
                               text-accent-navy
                               leading-tight
@@ -251,8 +251,8 @@ export default function ItineraryDay({
                               {company.name}
                             </div>
                             <div className="
-                              text-[13px]
-                              lg:text-[14px]
+                              text-[12px]
+                              lg:text-[13px]
                               text-accent-navy/60
                               font-light
                               leading-relaxed
@@ -270,7 +270,7 @@ export default function ItineraryDay({
               {/* Student Quote - Dark Card Style */}
               {studentQuote && (
                 <div className="mt-8 mb-4 relative w-full">
-                  <div className="relative bg-accent-navy rounded-xl p-6 lg:px-8 lg:py-7 overflow-hidden">
+                  <div className="relative bg-accent-navy rounded-xl p-5 lg:px-7 lg:py-6 overflow-hidden">
                     {/* Decorative Quote Marks - Top Left */}
                     <div className="absolute top-3 left-3 opacity-20">
                       <svg width="28" height="24" viewBox="0 0 48 40" fill="none">
@@ -288,8 +288,8 @@ export default function ItineraryDay({
                     {/* Quote Content */}
                     <div className="relative z-10">
                       <p className="
-                        text-[14px]
-                        lg:text-[15px]
+                        text-[13px]
+                        lg:text-[14px]
                         leading-[1.6]
                         tracking-[0.01em]
                         text-white/90
