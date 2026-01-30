@@ -96,7 +96,7 @@ export default function ItineraryDay({
               tracking-tight
               text-accent-navy
               mb-6 lg:mb-8
-              pt-20 lg:pt-20
+              pt-28 lg:pt-32
             ">
               Itinerary - Day {dayNumber}
             </h2>

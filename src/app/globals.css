@@ -27,7 +27,7 @@
 
   html {
     scroll-snap-type: y proximity; /* Changed from mandatory to proximity for softer snap */
-    scroll-padding-top: 0; /* Removed - was causing offset when scrolling down */
+    scroll-padding-top: 4rem; /* Accounts for the fixed header height (h-16 = 4rem) */
     overscroll-behavior-y: none;
   }
   
