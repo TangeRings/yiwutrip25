@@ -29,8 +29,8 @@
   html {
     scroll-snap-type: y proximity;
     /* Changed from mandatory to proximity for softer snap */
-    scroll-padding-top: 6rem;
-    /* Increased buffer for smoother landing when scrolling up */
+    scroll-padding-top: 4rem;
+    /* Exactly matches fixed header height (h-16 = 4rem) */
     overscroll-behavior-y: none;
   }
 
